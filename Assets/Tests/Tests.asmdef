@@ -3,6 +3,11 @@
     "optionalUnityReferences": [
         "TestAssemblies"
     ],
+     "references": [
+        "Unity.Entities",
+         "Unity.Entities.Tests",
+        "Unity.Collections"
+    ],
     "includePlatforms": [
         "Editor"
     ]

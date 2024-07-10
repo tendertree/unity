@@ -13,7 +13,9 @@ public class NewTestScript
         // Use the Assert class to test conditions
         Debug.Log("is kim is alive?");
         Assert.AreEqual("kim", "3");
-          }
+
+
+    }
 
     // A UnityTest behaves like a coroutine in Playarstars Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
