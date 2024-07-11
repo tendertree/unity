@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="046f2a4f-da2e-4656-a35d-c6c3e8b3055b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Tests/ECSTestFixture.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Tests/ECSTestFixture.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="046f2a4f-da2e-4656-a35d-c6c3e8b3055b" name="Changes" comment="n,h">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.first/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.first/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.first/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.first/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.first/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.first/.idea/indexLayout.xml" afterDir="false" />
@@ -19,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Readme.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Readme.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Readme.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Readme.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
@@ -38,6 +36,8 @@
       <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Tests.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/ECSTestFixture.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/ECSTestFixture.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Tests/ECSTestFixture.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/ECSTestFixture.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Tests/FirstTests.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/FirstTests.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Tests/FirstTests.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/FirstTests.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Tests/Tests.asmdef" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Tests/Tests.asmdef" afterDir="false" />
@@ -107,6 +107,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.2.3/Unity.Entities.Tests/Types/ComponentTypeTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.entities@1.2.3/Unity.Entities.Tests/WorldTests.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -190,13 +191,23 @@
       <workItem from="1720601681764" duration="99000" />
       <workItem from="1720601985043" duration="189000" />
       <workItem from="1720602249338" duration="189000" />
-      <workItem from="1720602455987" duration="2051000" />
+      <workItem from="1720602455987" duration="2206000" />
     </task>
+    <task id="LOCAL-00001" summary="feat: add unit">
+      <option name="closed" value="true" />
+      <created>1720607309422</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720607309422</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
@@ -205,5 +216,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="feat: add unit" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: add unit" />
   </component>
 </project>
