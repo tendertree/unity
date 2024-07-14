@@ -27,6 +27,7 @@ public partial class ClientSystem : SystemBase
             Debug.Log(command.ValueRO.message);
             commandBuffer.DestroyEntity(entity);
         }
+        //send message 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SendMessageRpc("Hello", ConnectionManager.clientWorld);
@@ -35,7 +36,7 @@ public partial class ClientSystem : SystemBase
         commandBuffer.Dispose();
     }
 
-    public void SendMessageRpc(string text, World world)
+    public void SendMessageRpc(string text, World world, Entity target = default)
     {
         if (world == null || world.IsCreated == false)
         {

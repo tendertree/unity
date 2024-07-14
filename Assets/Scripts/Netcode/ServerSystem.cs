@@ -18,8 +18,15 @@ public struct InitializedClient : IComponentData
 [WorldSystemFilter(WorldSystemFilterFlags.ServerSimulation)]
 public partial class ServerSystem : SystemBase
 {
+    private ComponentLookup<NetworkId> _clients;
+    protected override void OnCreate()
+    {
+        _clients = GetComponentLookup<NetworkId>(true);
+    }
     protected override void OnUpdate()
     {
+        _clients.Update(this);
+
         var commandBuffer = new EntityCommandBuffer(Allocator.Temp);
         foreach (var (request, command, entity) in SystemAPI.Query<RefRO<ReceiveRpcCommandRequest>, RefRO<ClientMessageRpcCommand>>().WithEntityAccess())
         {
