@@ -1,0 +1,44 @@
+  {
+    "oxQuizzes": [
+      {
+        "question": "가벼운의 뜻은 '무게가 많이 나가는 것'이다.",
+        "correctAnswer": false
+      },
+      {
+        "question": "행복은 생활에서 충분한 만족과 기쁨을 느끼는 상태를 의미한다.",
+        "correctAnswer": true
+      },
+      {
+        "question": "신선한은 '오래되고 상한'의 반대말이다.",
+        "correctAnswer": true
+      },
+      {
+        "question": "용기는 두려움을 느끼지 않는 상태를 의미한다.",
+        "correctAnswer": false
+      },
+      {
+        "question": "성실은 거짓되고 불성실한 성질을 나타낸다.",
+        "correctAnswer": false
+      },
+      {
+        "question": "창의적이란 새로운 것을 생각해 내는 특성이 있는 것을 의미한다.",
+        "correctAnswer": true
+      },
+      {
+        "question": "열정은 어떤 일에 대해 무관심한 태도를 말한다.",
+        "correctAnswer": false
+      },
+      {
+        "question": "공감은 다른 사람의 감정이나 의견을 이해하고 함께 느끼는 것을 의미한다.",
+        "correctAnswer": true
+      },
+      {
+        "question": "인내는 어려움을 견디지 못하고 쉽게 포기하는 것을 말한다.",
+        "correctAnswer": false
+      },
+      {
+        "question": "겸손은 자신을 내세우지 않고 남을 존중하는 태도이다.",
+        "correctAnswer": true
+      }
+    ]
+  }

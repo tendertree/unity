@@ -1,0 +1,54 @@
+{
+    "quizzes": [
+      {
+        "word": "가벼운",
+        "meaning": "무게가 적거나 부담이 크지 않은",
+        "wrongAnswer": "무거운"
+      },
+      {
+        "word": "행복",
+        "meaning": "생활에서 충분한 만족과 기쁨을 느끼는 상태",
+        "wrongAnswer": "불행"
+      },
+      {
+        "word": "신선한",
+        "meaning": "상하거나 부패하지 않고 새롭고 깨끗한",
+        "wrongAnswer": "썩은"
+      },
+      {
+        "word": "용기",
+        "meaning": "두려움 없이 어려운 일을 하거나 견디는 힘",
+        "wrongAnswer": "겁"
+      },
+      {
+        "word": "성실",
+        "meaning": "정성스럽고 참되며 거짓이 없는 성질",
+        "wrongAnswer": "불성실"
+      },
+      {
+        "word": "창의적",
+        "meaning": "새로운 것을 생각해 내는 특성이 있는",
+        "wrongAnswer": "모방적"
+      },
+      {
+        "word": "열정",
+        "meaning": "어떤 일에 열중하는 마음",
+        "wrongAnswer": "무관심"
+      },
+      {
+        "word": "공감",
+        "meaning": "다른 사람의 감정, 의견, 주장 등에 대해 자기도 그렇다고 느낌",
+        "wrongAnswer": "무시"
+      },
+      {
+        "word": "인내",
+        "meaning": "괴로움이나 어려움을 참고 견딤",
+        "wrongAnswer": "조급"
+      },
+      {
+        "word": "겸손",
+        "meaning": "자신을 내세우지 않고 남을 존중하는 태도",
+        "wrongAnswer": "교만"
+      }
+    ]
+  }

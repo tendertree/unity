@@ -3,10 +3,10 @@
     "optionalUnityReferences": [
         "TestAssemblies"
     ],
-     "references": [
+       "references": [
         "Unity.Entities",
-         "Unity.Entities.Tests",
-        "Unity.Collections"
+        "Unity.Collections",
+        "QuizGame"
     ],
     "includePlatforms": [
         "Editor"
