@@ -1,0 +1,19 @@
+{
+    "name": "Tests",
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "references": [
+        "Unity.Mathematics",
+        "Unity.Burst",
+        "Unity.Entities",
+        "Unity.Collections",
+        "Unity.TextMeshPro",
+        "Unity.Logging",
+        "ScriptAssembly",
+        "UtilsAssembly"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ]
+}

@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 55f7e63fa022cb346b03464eb081c198
+  productGUID: 0a1c6117271f98f4b9694ff098b9058d
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: first
+  productName: 3.37f1-math
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -513,13 +513,6 @@ PlayerSettings:
       m_Height: 720
       m_Kind: 1
       m_SubKind: 
-  - m_BuildTarget: VisionOS
-    m_Icons:
-    - m_Textures: []
-      m_Width: 1024
-      m_Height: 1024
-      m_Kind: 0
-      m_SubKind: 
   m_BuildTargetBatching: []
   m_BuildTargetShaderSettings: []
   m_BuildTargetGraphicsJobs: []
@@ -816,8 +809,7 @@ PlayerSettings:
   scriptingDefineSymbols: {}
   additionalCompilerArguments: {}
   platformArchitecture: {}
-  scriptingBackend:
-    Standalone: 0
+  scriptingBackend: {}
   il2cppCompilerConfiguration: {}
   il2cppCodeGeneration: {}
   managedStrippingLevel:
@@ -846,14 +838,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: first
+  metroPackageName: 3.37f1-math
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: first
+  metroApplicationDescription: 3.37f1-math
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -920,13 +912,13 @@ PlayerSettings:
   embeddedLinuxEnableGamepadInput: 1
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
-  apiCompatibilityLevel: 3
-  activeInputHandler: 0
+  apiCompatibilityLevel: 6
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 919e5c14-9d9f-4f21-8e42-a79571e6167a
+  cloudProjectId: 06672bcf-62c9-47e9-8e4f-5c30c788df2d
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: first
+  projectName: 3.37f1-math
   organizationId: unity_2cbf67b9f2400ce5da2c
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
