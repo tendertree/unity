@@ -86,28 +86,3 @@ public class DummySystemTests : ECSTestsFixture
     }
 }
 
-// DummySystem 정의 (ISystem 인터페이스 사용)
-public partial struct DummySystem : ISystem
-{
-    [BurstCompile]
-    public void OnCreate(ref SystemState state) { }
-
-    [BurstCompile]
-    public void OnDestroy(ref SystemState state) { }
-
-    [BurstCompile]
-    public void OnUpdate(ref SystemState state)
-    {
-        new DummyJob().ScheduleParallel();
-    }
-}
-
-// DummyJob 정의
-[BurstCompile]
-public partial struct DummyJob : IJobEntity
-{
-    void Execute(ref AgeComponent age, in DummyTagComponent tag)
-    {
-        age.Value++;
-    }
-}

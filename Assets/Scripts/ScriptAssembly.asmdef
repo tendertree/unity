@@ -2,6 +2,7 @@
     "name": "ScriptAssembly",
     "rootNamespace": "",
     "references": [
+        "Unity.NetCode",
         "Unity.Logging",
         "Unity.Burst",
         "Unity.Entities",
@@ -9,7 +10,9 @@
         "Unity.Mathematics",
         "Unity.Entities.Hybrid",
         "Unity.Transforms",
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "Unity.Networking.Editor",
+        "Unity.Networking.Transport"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

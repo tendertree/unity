@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "3.37f1-math.sln"
+    "dotnet.defaultSolution": "unity.sln"
 }
