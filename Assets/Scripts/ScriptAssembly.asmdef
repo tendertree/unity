@@ -2,6 +2,7 @@
     "name": "ScriptAssembly",
     "rootNamespace": "",
     "references": [
+        "Unity.Scenes",
         "Unity.NetCode",
         "Unity.Logging",
         "Unity.Burst",
@@ -12,7 +13,8 @@
         "Unity.Transforms",
         "Unity.TextMeshPro",
         "Unity.Networking.Editor",
-        "Unity.Networking.Transport"
+        "Unity.Networking.Transport",
+        "UnityEngine.InputSystem"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
