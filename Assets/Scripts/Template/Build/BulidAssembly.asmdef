@@ -1,0 +1,23 @@
+{
+    "name": "BulidAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:7ab66201bdb0ce54fa0876048633a6f7",
+        "Unity.Collections",
+        "Unity.Entities",
+      "Unity.Mathematics",
+"Unity.Entities.Graphics",
+"Unity.Transforms",
+"Unity.Rendering"
+
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
