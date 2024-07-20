@@ -7,9 +7,19 @@ using Unity.Rendering;
 
 public partial class MeshLoaderSystem : SystemBase
 {
+    public bool isBuild = false;
     protected override void OnCreate()
     {
         // Mesh와 Material 로드
+
+
+        Debug.Log("Suzan mesh entity created successfully");
+    }
+
+    protected override void OnUpdate()
+    {
+        if (!isBuild) { return; }
+        // Entity 렌더링은 Entities Graphics에 의해 자동으로 처리됩니다.
         Mesh suzanMesh = Resources.Load<Mesh>("mesh/Suzan");
         Material greenMaterial = Resources.Load<Material>("Material/Green");
 
@@ -46,12 +56,5 @@ public partial class MeshLoaderSystem : SystemBase
                 new float3(1, 1, 1)   // 크기
             )
         });
-
-        Debug.Log("Suzan mesh entity created successfully");
-    }
-
-    protected override void OnUpdate()
-    {
-        // Entity 렌더링은 Entities Graphics에 의해 자동으로 처리됩니다.
     }
 }

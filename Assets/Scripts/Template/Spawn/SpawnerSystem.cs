@@ -54,6 +54,7 @@ public partial struct ProcessSpawnerJob : IJobEntity
             // Spawns a new entity and positions it at the spawner.
             Entity newEntity = Ecb.Instantiate(chunkIndex, spawner.Prefab);
             Ecb.SetComponent(chunkIndex, newEntity, LocalTransform.FromPosition(spawner.SpawnPosition));
+            //add other components 
             Ecb.AddComponent(chunkIndex, newEntity, new Rotate
             {
                 CenterPoint = spawner.SpawnPosition,

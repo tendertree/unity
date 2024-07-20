@@ -1,8 +1,6 @@
 {
     "name": "Tests",
-    "optionalUnityReferences": [
-        "TestAssemblies"
-    ],
+    "rootNamespace": "",
     "references": [
         "Unity.Mathematics",
         "Unity.Burst",
@@ -11,9 +9,23 @@
         "Unity.TextMeshPro",
         "Unity.Logging",
         "ScriptAssembly",
-        "UtilsAssembly"
+        "UtilsAssembly",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"
-    ]
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [
+        "_INCLUDE_TESTSTESTS"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
 }
