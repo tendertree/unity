@@ -1,15 +1,25 @@
+
 using Unity.Entities;
 using Unity.Collections;
 
 public partial struct PlayerCountSystem : ISystem
 {
+    private Entity playerCountEntity;
+
     public void OnCreate(ref SystemState state)
     {
         state.RequireForUpdate<Player>();
+
+        // PlayerCountData 싱글톤 엔티티가 없으면 생성합니다.
         if (!SystemAPI.TryGetSingleton<PlayerCountData>(out _))
         {
-            var entity = state.EntityManager.CreateEntity();
-            state.EntityManager.AddComponentData(entity, new PlayerCountData());
+            playerCountEntity = state.EntityManager.CreateEntity();
+            state.EntityManager.AddComponentData(playerCountEntity, new PlayerCountData());
+        }
+        else
+        {
+            // 기존의 싱글톤 엔티티를 가져옵니다.
+            playerCountEntity = SystemAPI.GetSingletonEntity<PlayerCountData>();
         }
     }
 
@@ -18,19 +28,9 @@ public partial struct PlayerCountSystem : ISystem
         var playerQuery = SystemAPI.QueryBuilder().WithAll<Player>().Build();
         int playerCount = playerQuery.CalculateEntityCount();
 
-        // 싱글톤 엔티티를 통해 플레이어 수 정보를 저장
-
-        if (SystemAPI.TryGetSingleton<PlayerCountData>(out var playerCountData))
-        {
-            playerCountData.Count = playerCount;
-            SystemAPI.SetSingleton(playerCountData);
-        }
-        else
-        {
-            // 만약 PlayerCountData가 없다면 여기서 생성
-            var entity = state.EntityManager.CreateEntity();
-            state.EntityManager.AddComponentData(entity, new PlayerCountData { Count = playerCount });
-        }
+        // PlayerCountData를 갱신합니다.
+        var playerCountData = new PlayerCountData { Count = playerCount };
+        state.EntityManager.SetComponentData(playerCountEntity, playerCountData);
     }
 }
 

@@ -33,17 +33,23 @@ public class ButtonWithTextUi : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //check if mouse on the ui 
+
+        //show player count data 
         var _manager = World.DefaultGameObjectInjectionWorld.EntityManager;
         var finder = _manager.CreateEntityQuery(typeof(PlayerCountData));
         var root = finder.GetSingletonEntity();
         var origin = _manager.GetComponentData<PlayerCountData>(root);
-        Log.Info(origin);
     }
     private void LoopingAnimation(TransitionEndEvent evt)
     {
 
         _bottomContatiner.ToggleInClassList("toogle_animation_style");
         _bottomContatiner.RegisterCallback<TransitionEndEvent>(evt => _bottomContatiner.ToggleInClassList("toogle_animation_style"));
+    }
+    public bool IsPointerOverUI(Vector2 screenPosition)
+    {
+        return GetComponent<UIDocument>().rootVisualElement.panel.Pick(screenPosition) != null;
     }
 }
 

@@ -14,7 +14,8 @@
         "Unity.TextMeshPro",
         "Unity.Networking.Editor",
         "Unity.Networking.Transport",
-        "UnityEngine.InputSystem"
+        "UnityEngine.InputSystem",
+         "Unity.Physics"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

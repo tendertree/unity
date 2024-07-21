@@ -2,6 +2,6 @@
     <ui:VisualElement name="Container" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; align-items: flex-start;">
         <ui:Button text="create&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Button" />
         <ui:Label tabindex="-1" text="Label" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" style="width: 259px;" />
-        <ui:Button text="move&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="move" />
+        <ui:Button text="move&#10;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Move" />
     </ui:VisualElement>
 </ui:UXML>

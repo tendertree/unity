@@ -1,15 +1,21 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.UIElements;
 using Unity.Entities;
 using Unity.Collections;
-
+using Unity.Transforms;
+using Unity.Logging;
+using System;
 public class ButtonAction : MonoBehaviour
 {
     private EntityManager entityManager;
     private EntityQuery playerCountQuery;
     private Button btn;
+    private Button btn_move;
     private Label label;
-
+    // Start is called before the first frame update
     void Start()
     {
         entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
@@ -20,66 +26,84 @@ public class ButtonAction : MonoBehaviour
 
         var root = GetComponent<UIDocument>().rootVisualElement;
         btn = root.Q<Button>("Button");
+        btn_move = root.Q<Button>("Move");
         label = root.Q<Label>("Label");
-        btn.RegisterCallback<ClickEvent>(ButtonClick);
 
-        // 초기화 시 PlayerCountData 정리
-        CleanupPlayerCountData();
+        // btn.RegisterCallback<ClickEvent>(ButtonClick);
+        // btn_move.RegisterCallback<ClickEvent>(MoveObject);
+        btn.RegisterCallback<ClickEvent>(ButtonClick, TrickleDown.TrickleDown);
+        btn_move.RegisterCallback<ClickEvent>(MoveObject, TrickleDown.TrickleDown);
+
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+    private void MoveObject(ClickEvent evt)
+    {
+        Log.Info("am I pushed");
+
+        var activationQuery = entityManager.CreateEntityQuery(typeof(Player));
+
+        try
+        {
+            var activationEntity = activationQuery.GetSingletonEntity();
+
+            // Player 컴포넌트를 가진 엔티티가 존재함
+            var localTransform = entityManager.GetComponentData<LocalTransform>(activationEntity);
+
+            // MovingUpDown 컴포넌트가 이미 있는지 확인
+            if (!entityManager.HasComponent<MovingUpDown>(activationEntity))
+            {
+                entityManager.AddComponentData(activationEntity, new MovingUpDown
+                {
+                    Amplitude = 1f,  // 원하는 값으로 설정
+                    Frequency = 1f,  // 원하는 값으로 설정
+                    StartPosition = localTransform.Position,
+                    TimeOffset = 0f  // 필요하다면 랜덤 값을 사용할 수 있습니다
+                });
+                Debug.Log("MovingUpDown component added to Player entity.");
+            }
+            else
+            {
+                Debug.Log("Player entity already has MovingUpDown component.");
+            }
+        }
+        catch (InvalidOperationException)
+        {
+            // Player 컴포넌트를 가진 엔티티가 존재하지 않거나 여러 개임
+            Debug.LogWarning("No single entity with Player component found. Skipping MovingUpDown addition.");
+        }
+        evt.StopPropagation();
+    }
+
+
 
     private void ButtonClick(ClickEvent evt)
     {
+        evt.StopPropagation();
         var activationQuery = entityManager.CreateEntityQuery(typeof(SystemActivationTag));
         var activationEntity = activationQuery.GetSingletonEntity();
         var activationTag = entityManager.GetComponentData<SystemActivationTag>(activationEntity);
         activationTag.IsActive = !activationTag.IsActive;
         entityManager.SetComponentData(activationEntity, activationTag);
+        evt.StopPropagation();
     }
-
-    void Update()
+    public bool IsPointerOverButton(Vector2 screenPosition)
     {
-        UpdatePlayerCountDisplay();
+        return IsPointOverElement(btn, screenPosition) || IsPointOverElement(btn_move, screenPosition);
     }
-
-    private void CleanupPlayerCountData()
+    private bool IsPointOverElement(VisualElement element, Vector2 screenPosition)
     {
-        var entities = playerCountQuery.ToEntityArray(Allocator.Temp);
-        if (entities.Length > 1)
-        {
-            Debug.LogWarning($"Found {entities.Length} PlayerCountData entities. Cleaning up...");
-            for (int i = 1; i < entities.Length; i++)
-            {
-                entityManager.DestroyEntity(entities[i]);
-            }
-        }
-        else if (entities.Length == 0)
-        {
-            Debug.Log("No PlayerCountData found. Creating one...");
-            var newEntity = entityManager.CreateEntity();
-            entityManager.AddComponentData(newEntity, new PlayerCountData { Count = 0 });
-        }
-        entities.Dispose();
-    }
+        // 스크린 좌표를 패널 좌표로 변환
+        Vector2 panelPosition = RuntimePanelUtils.ScreenToPanel(element.panel, screenPosition);
 
-    private void UpdatePlayerCountDisplay()
-    {
-        if (playerCountQuery.TryGetSingleton<PlayerCountData>(out var playerCountData))
-        {
-            label.text = $"Player Count: {playerCountData.Count}";
-        }
-        else
-        {
-            label.text = "Player Count: N/A";
-            Debug.LogWarning("PlayerCountData not found");
-        }
+        // 요소의 월드 경계를 가져옴
+        Rect elementRect = element.worldBound;
+
+        // 패널 좌표가 요소의 경계 내에 있는지 확인
+        return elementRect.Contains(panelPosition);
     }
 }
-
-
-/* World world = World.DefaultGameObjectInjectionWorld;
-        EntityManager entityManager = world.EntityManager;
-        entityManager.CompleteAllTrackedJobs();
-        EntityQuery shipsQuery = new EntityQueryBuilder(Allocator.Temp).WithAll<Ship>().Build(entityManager);
-
-        m_ShipCountLabel.text = $"{shipsQuery.CalculateEntityCount()}";
- */
