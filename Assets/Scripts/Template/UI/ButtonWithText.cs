@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using UnityEngine.UIElements;
 using Unity.Entities;
 using Unity.Collections;
 using Unity.Transforms;
 using Unity.Logging;
 using System;
+
 public class ButtonAction : MonoBehaviour
 {
     private EntityManager entityManager;
@@ -41,9 +41,15 @@ public class ButtonAction : MonoBehaviour
     {
 
     }
+    private void MoveCamera(ClickEvent evt)
+    {
+        evt.StopPropagation();
+        Log.Info("move Camera");
+
+
+    }
     private void MoveObject(ClickEvent evt)
     {
-        Log.Info("am I pushed");
 
         var activationQuery = entityManager.CreateEntityQuery(typeof(Player));
 

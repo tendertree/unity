@@ -15,7 +15,10 @@
         "Unity.Networking.Editor",
         "Unity.Networking.Transport",
         "UnityEngine.InputSystem",
-         "Unity.Physics"
+        "Unity.CharacterController",
+        "Unity.Physics",
+        "Unity.Physics.Authoring"
+        
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
