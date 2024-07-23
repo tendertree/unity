@@ -6,9 +6,11 @@ using Unity.NetCode;
 using UnityEngine;
 
 
+//arst
 public struct ClientMessageRpcCommand : IRpcCommand
 {
     public FixedString64Bytes message;
+    
 }
 public struct SpawnUnitRpcCommand : IRpcCommand
 {
