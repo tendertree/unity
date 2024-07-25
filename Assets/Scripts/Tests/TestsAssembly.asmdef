@@ -7,7 +7,9 @@
         "Unity.Entities",
         "Unity.Collections",
         "Unity.Burst",
-        "Unity.Mathematics"
+        "Unity.Mathematics",
+        "QuizAssembly",
+        "NetCodeAssembly"
     ],
     "includePlatforms": [
         "Editor"
@@ -17,7 +19,8 @@
     "overrideReferences": true,
     "precompiledReferences": [
         "nunit.framework.dll",
-        "Newtonsoft.Json.dll"
+        "Newtonsoft.Json.dll",
+        ""
     ],
     "autoReferenced": true,
     "defineConstraints": [

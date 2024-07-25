@@ -1,7 +1,7 @@
 ﻿using Unity.Burst;
 using Unity.Entities;
 
-namespace Template.Quiz
+namespace Quiz
 {
     [BurstCompile]
     [UpdateInGroup(typeof(InitializationSystemGroup))]

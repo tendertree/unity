@@ -1,6 +1,5 @@
-﻿using Unity.Entities;
-using NUnit.Framework;
-using Quiz;
+using Unity.Entities;
+
 public class QuizSystemTest : ECSTestsFixture
 {
     [SetUp]
@@ -9,7 +8,7 @@ public class QuizSystemTest : ECSTestsFixture
         base.Setup();
         m_TestWorld = new World("Test World");
         var systemGroup = m_TestWorld.GetOrCreateSystemManaged<SimulationSystemGroup>();
-        m_SystemHandle = m_TestWorld.CreateSystem<QuizDataLoadSystem>();
+        m_SystemHandle = m_TestWorld.CreateSystem<QuizSystemTest.cs>();
         systemGroup.AddSystemToUpdateList(m_SystemHandle);
     }
 
@@ -24,13 +23,20 @@ public class QuizSystemTest : ECSTestsFixture
     private SystemHandle m_SystemHandle;
 
     [Test]
-    public void QuizInitTest()
+    public override void TestSystem()
     {
         // Arrange
+        var entity = m_TestWorld.EntityManager.CreateEntity(
+            typeof(DummyTagComponent), typeof(Test));
+        m_TestWorld.EntityManager.SetComponentData(
+            entity, new Test { Value = 0 });
 
         // Act
+        m_TestWorld.Update();
 
         // Assert
+        var age = m_TestWorld.EntityManager.GetComponentData<Test>(entity);
+        Assert.AreEqual(1, age.Value, "Age should be increased by 1");
     }
 
 }
