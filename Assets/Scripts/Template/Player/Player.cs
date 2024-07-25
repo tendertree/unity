@@ -1,5 +1,6 @@
 using Unity.Entities;
 using Unity.Mathematics;
+
 public struct PlayerSpawner : IComponentData
 {
     public Entity Prefab;
@@ -11,6 +12,3 @@ public struct Player : IComponentData
 {
     public int grade;
 }
-
-
-

@@ -6,12 +6,12 @@ using Unity.Logging;
 using UnityEngine;
 using Client = Supabase.Client;
 
-public class SupabaseQuizManager : MonoBehaviour
+public class QuizListManager : MonoBehaviour
 {
     public SupabaseManager _manager;
     private Client client;
 
-    public async Task<quiz> CreateQuiz(string word, string meaning, string wrongAnswer)
+    public async Task<quiz> QuizLoadFromSupabase(string word, string meaning, string wrongAnswer)
     {
         client = _manager.Supabase();
         try
