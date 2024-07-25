@@ -1,0 +1,47 @@
+﻿[
+  {
+    "word": "ephemeral",
+    "meaning": "단기간 지속되는",
+    "wrong_answer": "영구적인"
+  },
+  {
+    "word": "ubiquitous",
+    "meaning": "어디에나 있는",
+    "wrong_answer": "희귀한"
+  },
+  {
+    "word": "surreptitious",
+    "meaning": "은밀한, 몰래하는",
+    "wrong_answer": "공개적인"
+  },
+  {
+    "word": "fastidious",
+    "meaning": "까다로운",
+    "wrong_answer": "무관심한"
+  },
+  {
+    "word": "pernicious",
+    "meaning": "유해한",
+    "wrong_answer": "이로운"
+  },
+  {
+    "word": "eloquent",
+    "meaning": "웅변적인",
+    "wrong_answer": "말솜씨가 서툰"
+  },
+  {
+    "word": "benevolent",
+    "meaning": "자비로운",
+    "wrong_answer": "악의적인"
+  },
+  {
+    "word": "articulate",
+    "meaning": "명확하게 표현하는",
+    "wrong_answer": "불분명한"
+  },
+  {
+    "word": "profound",
+    "meaning": "심오한",
+    "wrong_answer": "불분명한"
+}
+  ]

@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using Client = Supabase.Client;
 
-namespace com.example
+namespace server
 {
 	public class SupabaseManager : MonoBehaviour
 	{

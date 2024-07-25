@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
-using com.example;
+using server;
 using Cysharp.Threading.Tasks;
 using Supabase.Gotrue.Exceptions;
 using TMPro;
