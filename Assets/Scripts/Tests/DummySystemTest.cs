@@ -1,14 +1,10 @@
 using NUnit.Framework;
-using Unity.Entities;
 using Unity.Collections;
-using Unity.Burst;
+using Unity.Entities;
 
 [TestFixture]
 public class DummySystemTests : ECSTestsFixture
 {
-    private World m_TestWorld;
-    private SystemHandle m_SystemHandle;
-
     [SetUp]
     public override void Setup()
     {
@@ -18,6 +14,16 @@ public class DummySystemTests : ECSTestsFixture
         m_SystemHandle = m_TestWorld.CreateSystem<DummySystem>();
         systemGroup.AddSystemToUpdateList(m_SystemHandle);
     }
+
+    [TearDown]
+    public override void TearDown()
+    {
+        m_TestWorld.Dispose();
+        base.TearDown();
+    }
+
+    private World m_TestWorld;
+    private SystemHandle m_SystemHandle;
 
     [Test]
     public void DummySystem_IncreasesAge()
@@ -62,27 +68,18 @@ public class DummySystemTests : ECSTestsFixture
         var entityCount = 100;
         var query = m_TestWorld.EntityManager.CreateEntityQuery(typeof(DummyTagComponent), typeof(AgeComponent));
 
-        var entities = m_TestWorld.EntityManager.CreateEntity(m_TestWorld.EntityManager.CreateArchetype(typeof(DummyTagComponent), typeof(AgeComponent)), entityCount, Allocator.Temp);
+        var entities = m_TestWorld.EntityManager.CreateEntity(
+            m_TestWorld.EntityManager.CreateArchetype(typeof(DummyTagComponent), typeof(AgeComponent)), entityCount,
+            Allocator.Temp);
 
         // Act
         m_TestWorld.Update();
 
         // Assert
         var ages = query.ToComponentDataArray<AgeComponent>(Allocator.Temp);
-        foreach (var age in ages)
-        {
-            Assert.AreEqual(1, age.Value, "All ages should be increased to 1");
-        }
+        foreach (var age in ages) Assert.AreEqual(1, age.Value, "All ages should be increased to 1");
 
         ages.Dispose();
         entities.Dispose();
     }
-
-    [TearDown]
-    public override void TearDown()
-    {
-        m_TestWorld.Dispose();
-        base.TearDown();
-    }
 }
-

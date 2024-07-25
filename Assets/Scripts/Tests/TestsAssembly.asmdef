@@ -2,16 +2,12 @@
     "name": "Tests",
     "rootNamespace": "",
     "references": [
-        "Unity.Mathematics",
-        "Unity.Burst",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner",
         "Unity.Entities",
         "Unity.Collections",
-        "Unity.TextMeshPro",
-        "Unity.Logging",
-        "ScriptAssembly",
-        "UtilsAssembly",
-        "UnityEngine.TestRunner",
-        "UnityEditor.TestRunner"
+        "Unity.Burst",
+        "Unity.Mathematics"
     ],
     "includePlatforms": [
         "Editor"
@@ -20,11 +16,12 @@
     "allowUnsafeCode": false,
     "overrideReferences": true,
     "precompiledReferences": [
-        "nunit.framework.dll"
+        "nunit.framework.dll",
+        "Newtonsoft.Json.dll"
     ],
-    "autoReferenced": false,
+    "autoReferenced": true,
     "defineConstraints": [
-        "_INCLUDE_TESTSTESTS"
+        "UNITY_INCLUDE_TESTS"
     ],
     "versionDefines": [],
     "noEngineReferences": false
