@@ -1,10 +1,9 @@
-
 using System;
 using Supabase.Postgrest.Attributes;
 using Supabase.Postgrest.Models;
 
 // Postgrest.Models.BaseModels
-public class quiz : BaseModel
+public class Quiz_DB : BaseModel
 {
     [PrimaryKey("id")] public long Id { get; set; }
 
@@ -18,11 +17,13 @@ public class quiz : BaseModel
 
     [Column("wrong_answer")] public string WrongAnswer { get; set; }
 
+    /*
     public override bool Equals(object obj)
     {
         return obj is quiz quiz &&
                Id == quiz.Id;
     }
+    */
 
     public override int GetHashCode()
     {

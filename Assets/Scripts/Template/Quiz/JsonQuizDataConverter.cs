@@ -1,12 +1,8 @@
-﻿ using System.Collections.Generic;
-    using Newtonsoft.Json.Linq;
-    using Unity.Collections;
-    using Unity.Entities;
-
-namespace Quiz
+﻿namespace Quiz
 {
     public static class JsonToQuizDataConverter
     {
+        /*
         public static List<QuizData> ConvertJsonToQuizDataList(string jsonString)
         {
             List<QuizData> quizDataList = new List<QuizData>();
@@ -24,8 +20,8 @@ namespace Quiz
 
                 quizDataList.Add(quizData);
             }
+            */
 
-            return quizDataList;
-        }
+        // return quizDataList;
     }
-   }
+}
