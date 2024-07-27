@@ -3,15 +3,17 @@ using Unity.Entities;
 
 public struct PlayerAnswer : IComponentData
 {
-    public bool Choice; // true면 "뜻"을 선택, false면 "단어"를 선택
+    public bool Choice; // player가 현재 선택한 대답 
     public bool HasSubmitted;
 }
 
-public struct CurrentPlayerSelectAnswer : IComponentData
+public struct PlayerQuizSelection : IComponentData
 {
-    public bool IsCorrect;
+    public bool Value; // player가 현재 선택한 대답 
 }
 
+
+//player가 입력을 할때까지 대기 
 public struct PlayerAnswerWait : IComponentData, IEnableableComponent
 {
 }
