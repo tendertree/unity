@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
-  productGUID: 39665fbeb73d766418ea5b607fc41ad3
+  productGUID: a47d75889dde08a498d4991f4dd1b14a
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-  productName: MultiBasic
+  productName: Main
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -813,8 +813,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
-  scriptingDefineSymbols:
-    Standalone: SUPABASE_GOTRUE;UNITY_PHYSICS_CUSTOM
+  scriptingDefineSymbols: {}
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -829,7 +828,6 @@ PlayerSettings:
     PS5: 1
     QNX: 1
     Stadia: 1
-    Standalone: 4
     VisionOS: 1
     WebGL: 1
     Windows Store Apps: 1
@@ -847,14 +845,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: MultiBasic
+  metroPackageName: Main
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-  metroApplicationDescription: MultiBasic
+  metroApplicationDescription: Main
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -924,10 +922,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 58784d5c-f042-47a3-93d6-c96de07ac97a
+  cloudProjectId: 2b125faf-76cf-453d-95ae-34811f3e1e79
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: MultiBasic
+  projectName: Main
   organizationId: unity_2cbf67b9f2400ce5da2c
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
