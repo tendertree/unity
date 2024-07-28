@@ -2,24 +2,27 @@
 using Unity.Logging;
 using UnityEngine;
 
-public partial class BasicInputDataLogSystem : SystemBase
+namespace Input
 {
-    public static bool IsEnabled = false;
-
-    protected override void OnCreate()
+    public partial class BasicInputDataLogSystem : SystemBase
     {
-        base.OnCreate();
-        Enabled = false;
-    }
+        public static bool IsEnabled = false;
 
-    protected override void OnUpdate()
-    {
-        if (!IsEnabled) return;
+        protected override void OnCreate()
+        {
+            base.OnCreate();
+            Enabled = false;
+        }
 
-        var inputData = SystemAPI.GetSingleton<BasicInputData>();
-        var direction = inputData.MousePostion;
-        var directionVector2 = new Vector2(direction.x, direction.y);
+        protected override void OnUpdate()
+        {
+            if (!IsEnabled) return;
 
-        Log.Info($"Direction: {directionVector2}");
+            var inputData = SystemAPI.GetSingleton<BasicInputData>();
+            var direction = inputData.MousePostion;
+            var directionVector2 = new Vector2(direction.x, direction.y);
+
+            Log.Info($"Direction: {directionVector2}");
+        }
     }
 }

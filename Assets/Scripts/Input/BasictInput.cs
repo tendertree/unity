@@ -9,18 +9,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Utilities;
-
-public partial class @BasictInput: IInputActionCollection2, IDisposable
+namespace Input
 {
-    public InputActionAsset asset { get; }
-    public @BasictInput()
+
+
+    using System;
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine.InputSystem;
+    using UnityEngine.InputSystem.Utilities;
+
+    public partial class @BasictInput : IInputActionCollection2, IDisposable
     {
-        asset = InputActionAsset.FromJson(@"{
+        public InputActionAsset asset { get; }
+
+        public @BasictInput()
+        {
+            asset = InputActionAsset.FromJson(@"{
     ""name"": ""BasictInput"",
     ""maps"": [
         {
@@ -138,134 +143,161 @@ public partial class @BasictInput: IInputActionCollection2, IDisposable
     ],
     ""controlSchemes"": []
 }");
+            // Character
+            m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
+            m_Character_Click = m_Character.FindAction("Click", throwIfNotFound: true);
+            m_Character_MousePosition = m_Character.FindAction("MousePosition", throwIfNotFound: true);
+            m_Character_Direction = m_Character.FindAction("Direction", throwIfNotFound: true);
+        }
+
+        public void Dispose()
+        {
+            UnityEngine.Object.Destroy(asset);
+        }
+
+        public InputBinding? bindingMask
+        {
+            get => asset.bindingMask;
+            set => asset.bindingMask = value;
+        }
+
+        public ReadOnlyArray<InputDevice>? devices
+        {
+            get => asset.devices;
+            set => asset.devices = value;
+        }
+
+        public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
+
+        public bool Contains(InputAction action)
+        {
+            return asset.Contains(action);
+        }
+
+        public IEnumerator<InputAction> GetEnumerator()
+        {
+            return asset.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public void Enable()
+        {
+            asset.Enable();
+        }
+
+        public void Disable()
+        {
+            asset.Disable();
+        }
+
+        public IEnumerable<InputBinding> bindings => asset.bindings;
+
+        public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false)
+        {
+            return asset.FindAction(actionNameOrId, throwIfNotFound);
+        }
+
+        public int FindBinding(InputBinding bindingMask, out InputAction action)
+        {
+            return asset.FindBinding(bindingMask, out action);
+        }
+
         // Character
-        m_Character = asset.FindActionMap("Character", throwIfNotFound: true);
-        m_Character_Click = m_Character.FindAction("Click", throwIfNotFound: true);
-        m_Character_MousePosition = m_Character.FindAction("MousePosition", throwIfNotFound: true);
-        m_Character_Direction = m_Character.FindAction("Direction", throwIfNotFound: true);
-    }
+        private readonly InputActionMap m_Character;
+        private List<ICharacterActions> m_CharacterActionsCallbackInterfaces = new List<ICharacterActions>();
+        private readonly InputAction m_Character_Click;
+        private readonly InputAction m_Character_MousePosition;
+        private readonly InputAction m_Character_Direction;
 
-    public void Dispose()
-    {
-        UnityEngine.Object.Destroy(asset);
-    }
-
-    public InputBinding? bindingMask
-    {
-        get => asset.bindingMask;
-        set => asset.bindingMask = value;
-    }
-
-    public ReadOnlyArray<InputDevice>? devices
-    {
-        get => asset.devices;
-        set => asset.devices = value;
-    }
-
-    public ReadOnlyArray<InputControlScheme> controlSchemes => asset.controlSchemes;
-
-    public bool Contains(InputAction action)
-    {
-        return asset.Contains(action);
-    }
-
-    public IEnumerator<InputAction> GetEnumerator()
-    {
-        return asset.GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        return GetEnumerator();
-    }
-
-    public void Enable()
-    {
-        asset.Enable();
-    }
-
-    public void Disable()
-    {
-        asset.Disable();
-    }
-
-    public IEnumerable<InputBinding> bindings => asset.bindings;
-
-    public InputAction FindAction(string actionNameOrId, bool throwIfNotFound = false)
-    {
-        return asset.FindAction(actionNameOrId, throwIfNotFound);
-    }
-
-    public int FindBinding(InputBinding bindingMask, out InputAction action)
-    {
-        return asset.FindBinding(bindingMask, out action);
-    }
-
-    // Character
-    private readonly InputActionMap m_Character;
-    private List<ICharacterActions> m_CharacterActionsCallbackInterfaces = new List<ICharacterActions>();
-    private readonly InputAction m_Character_Click;
-    private readonly InputAction m_Character_MousePosition;
-    private readonly InputAction m_Character_Direction;
-    public struct CharacterActions
-    {
-        private @BasictInput m_Wrapper;
-        public CharacterActions(@BasictInput wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Click => m_Wrapper.m_Character_Click;
-        public InputAction @MousePosition => m_Wrapper.m_Character_MousePosition;
-        public InputAction @Direction => m_Wrapper.m_Character_Direction;
-        public InputActionMap Get() { return m_Wrapper.m_Character; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(CharacterActions set) { return set.Get(); }
-        public void AddCallbacks(ICharacterActions instance)
+        public struct CharacterActions
         {
-            if (instance == null || m_Wrapper.m_CharacterActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_CharacterActionsCallbackInterfaces.Add(instance);
-            @Click.started += instance.OnClick;
-            @Click.performed += instance.OnClick;
-            @Click.canceled += instance.OnClick;
-            @MousePosition.started += instance.OnMousePosition;
-            @MousePosition.performed += instance.OnMousePosition;
-            @MousePosition.canceled += instance.OnMousePosition;
-            @Direction.started += instance.OnDirection;
-            @Direction.performed += instance.OnDirection;
-            @Direction.canceled += instance.OnDirection;
+            private @BasictInput m_Wrapper;
+
+            public CharacterActions(@BasictInput wrapper)
+            {
+                m_Wrapper = wrapper;
+            }
+
+            public InputAction @Click => m_Wrapper.m_Character_Click;
+            public InputAction @MousePosition => m_Wrapper.m_Character_MousePosition;
+            public InputAction @Direction => m_Wrapper.m_Character_Direction;
+
+            public InputActionMap Get()
+            {
+                return m_Wrapper.m_Character;
+            }
+
+            public void Enable()
+            {
+                Get().Enable();
+            }
+
+            public void Disable()
+            {
+                Get().Disable();
+            }
+
+            public bool enabled => Get().enabled;
+
+            public static implicit operator InputActionMap(CharacterActions set)
+            {
+                return set.Get();
+            }
+
+            public void AddCallbacks(ICharacterActions instance)
+            {
+                if (instance == null || m_Wrapper.m_CharacterActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_CharacterActionsCallbackInterfaces.Add(instance);
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
+                @Direction.started += instance.OnDirection;
+                @Direction.performed += instance.OnDirection;
+                @Direction.canceled += instance.OnDirection;
+            }
+
+            private void UnregisterCallbacks(ICharacterActions instance)
+            {
+                @Click.started -= instance.OnClick;
+                @Click.performed -= instance.OnClick;
+                @Click.canceled -= instance.OnClick;
+                @MousePosition.started -= instance.OnMousePosition;
+                @MousePosition.performed -= instance.OnMousePosition;
+                @MousePosition.canceled -= instance.OnMousePosition;
+                @Direction.started -= instance.OnDirection;
+                @Direction.performed -= instance.OnDirection;
+                @Direction.canceled -= instance.OnDirection;
+            }
+
+            public void RemoveCallbacks(ICharacterActions instance)
+            {
+                if (m_Wrapper.m_CharacterActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(ICharacterActions instance)
+            {
+                foreach (var item in m_Wrapper.m_CharacterActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_CharacterActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
         }
 
-        private void UnregisterCallbacks(ICharacterActions instance)
-        {
-            @Click.started -= instance.OnClick;
-            @Click.performed -= instance.OnClick;
-            @Click.canceled -= instance.OnClick;
-            @MousePosition.started -= instance.OnMousePosition;
-            @MousePosition.performed -= instance.OnMousePosition;
-            @MousePosition.canceled -= instance.OnMousePosition;
-            @Direction.started -= instance.OnDirection;
-            @Direction.performed -= instance.OnDirection;
-            @Direction.canceled -= instance.OnDirection;
-        }
+        public CharacterActions @Character => new CharacterActions(this);
 
-        public void RemoveCallbacks(ICharacterActions instance)
+        public interface ICharacterActions
         {
-            if (m_Wrapper.m_CharacterActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
+            void OnClick(InputAction.CallbackContext context);
+            void OnMousePosition(InputAction.CallbackContext context);
+            void OnDirection(InputAction.CallbackContext context);
         }
-
-        public void SetCallbacks(ICharacterActions instance)
-        {
-            foreach (var item in m_Wrapper.m_CharacterActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_CharacterActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public CharacterActions @Character => new CharacterActions(this);
-    public interface ICharacterActions
-    {
-        void OnClick(InputAction.CallbackContext context);
-        void OnMousePosition(InputAction.CallbackContext context);
-        void OnDirection(InputAction.CallbackContext context);
     }
 }
