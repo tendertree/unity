@@ -3,7 +3,7 @@ using Unity.Entities;
 
 public struct PlayerAnswer : IComponentData
 {
-<<<<<<< HEAD
+
     public bool Choice; // true면 "뜻"을 선택, false면 "단어"를 선택
     public bool HasSubmitted;
 }
@@ -11,10 +11,6 @@ public struct PlayerAnswer : IComponentData
 public struct CurrentPlayerSelectAnswer : IComponentData
 {
     public bool IsCorrect;
-}
-
-||||||| parent of 77ef849 (feat: add npc tag)
-=======
     public bool Choice; // player가 현재 선택한 대답 
     public bool HasSubmitted;
 }
@@ -25,8 +21,7 @@ public struct PlayerQuizSelection : IComponentData
 }
 
 
-//player가 입력을 할때까지 대기 
->>>>>>> 77ef849 (feat: add npc tag)
+
 public struct PlayerAnswerWait : IComponentData, IEnableableComponent
 {
 }

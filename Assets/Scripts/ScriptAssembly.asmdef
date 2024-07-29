@@ -1,0 +1,28 @@
+{
+  "name": "ScriptAssembly",
+  "rootNamespace": "",
+  "references": [
+    "UnityEngine.TestRunner",
+    "UnityEditor.TestRunner",
+    "Unity.Entities",
+    "Unity.Collections",
+    "Unity.Mathematics",
+    "Unity.Logging",
+    "Unity.Burst",
+    "Unity.InputSystem",
+    "Unity.RenderPipelines.Core.Editor",
+    "Unity.Entities.Graphics",
+    "Unity.Transforms",
+    "Unity.Physics",
+    "Unity.Rendering"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}

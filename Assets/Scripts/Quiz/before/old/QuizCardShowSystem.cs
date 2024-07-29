@@ -1,7 +1,7 @@
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
-
+using Unity.Logging;
 using Unity.Logging;
 using EntityCommandBuffer = Unity.Entities.EntityCommandBuffer;
 using ISystem = Unity.Entities.ISystem;
@@ -41,7 +41,6 @@ public partial struct QuizCardShowSystem : ISystem
             var trigger = SystemAPI.GetSingletonRW<SpawnNpcTrigger>();
             trigger.ValueRW.ShouldSpawn = true;
         }
->>>>>>> 77ef849 (feat: add npc tag)
     }
 
     [BurstCompile]

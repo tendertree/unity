@@ -1,7 +1,6 @@
 using Input;
 using Unity.Collections;
 using Unity.Entities;
-using User;
 using EntityQueryBuilder = Unity.Entities.EntityQueryBuilder;
 using ISystem = Unity.Entities.ISystem;
 using SimulationSystemGroup = Unity.Entities.SimulationSystemGroup;

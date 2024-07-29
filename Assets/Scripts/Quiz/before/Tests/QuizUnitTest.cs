@@ -1,6 +1,5 @@
 ﻿using NUnit.Framework;
 using Unity.Entities;
-using User;
 
 namespace Quiz.test
 {

@@ -1,9 +1,9 @@
 ﻿using Unity.Collections;
 using Unity.Entities;
 using UnityEngine;
-using User;
 using SimulationSystemGroup = Unity.Entities.SimulationSystemGroup;
 using SystemState = Unity.Entities.SystemState;
+using Quiz;
 
 namespace Quiz.test
 {

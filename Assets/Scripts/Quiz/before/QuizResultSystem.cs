@@ -1,7 +1,6 @@
 ﻿using Unity.Collections;
 using Unity.Entities;
 using Unity.Logging;
-using User;
 
 namespace Quiz
 {

@@ -1,7 +1,6 @@
 ﻿using Unity.Collections;
 using Unity.Entities;
 using Unity.Logging;
-using User;
 
 namespace Quiz
 {
@@ -54,6 +53,8 @@ namespace Quiz
                     // 다음 단계로 진행
                     ecb.SetComponentEnabled<EnterQuizInit>(entity, false);
                     ecb.SetComponentEnabled<EnterQuizShow>(entity, true);
+
+
                 }
         }
     }

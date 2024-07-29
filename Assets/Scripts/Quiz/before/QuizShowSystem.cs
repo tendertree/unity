@@ -1,7 +1,6 @@
 ﻿using Unity.Collections;
 using Unity.Entities;
 using Unity.Logging;
-using User;
 
 namespace Quiz
 {
@@ -38,7 +37,7 @@ namespace Quiz
                         if (SystemAPI.HasComponent<PlayerAnswer>(entity))
                         {
                             // PlayerAnswer 컴포넌트의 값을 가져옴
-                            var playerAnswer = SystemAPI.GetComponent<PlayerAnswer>(entity).AnswerNumber;
+                            var playerAnswer = SystemAPI.GetComponent<PlayerAnswer>(entity);
 
                             // TODO: 답변 확인 로직
                             // ...
